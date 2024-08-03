@@ -1,0 +1,17 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.bengi</groupId>
+    <artifactId>Spring-GRPC</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Spring-GRPC</name>
+
+    <modules>
+        <module>interface-service</module>
+        <module>registry-service</module>
+    </modules>
+
+
+
+</project>
