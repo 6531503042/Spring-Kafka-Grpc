@@ -8,11 +8,19 @@ public interface MessageRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The message field of type string
+   * </pre>
+   *
    * <code>string message = 1;</code>
    * @return The message.
    */
   java.lang.String getMessage();
   /**
+   * <pre>
+   * The message field of type string
+   * </pre>
+   *
    * <code>string message = 1;</code>
    * @return The bytes for message.
    */

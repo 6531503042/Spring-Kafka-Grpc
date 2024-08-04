@@ -4,6 +4,10 @@
 package dev.bengi.interfaceservice;
 
 /**
+ * <pre>
+ * Define a message for the response
+ * </pre>
+ *
  * Protobuf type {@code dev.bengi.MessageResponse}
  */
 public final class MessageResponse extends
@@ -48,6 +52,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
   /**
+   * <pre>
+   * The message field of type string
+   * </pre>
+   *
    * <code>string message = 1;</code>
    * @return The message.
    */
@@ -65,6 +73,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * The message field of type string
+   * </pre>
+   *
    * <code>string message = 1;</code>
    * @return The bytes for message.
    */
@@ -238,6 +250,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Define a message for the response
+   * </pre>
+   *
    * Protobuf type {@code dev.bengi.MessageResponse}
    */
   public static final class Builder extends
@@ -409,6 +425,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object message_ = "";
     /**
+     * <pre>
+     * The message field of type string
+     * </pre>
+     *
      * <code>string message = 1;</code>
      * @return The message.
      */
@@ -425,6 +445,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The message field of type string
+     * </pre>
+     *
      * <code>string message = 1;</code>
      * @return The bytes for message.
      */
@@ -442,6 +466,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The message field of type string
+     * </pre>
+     *
      * <code>string message = 1;</code>
      * @param value The message to set.
      * @return This builder for chaining.
@@ -455,6 +483,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The message field of type string
+     * </pre>
+     *
      * <code>string message = 1;</code>
      * @return This builder for chaining.
      */
@@ -465,6 +497,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The message field of type string
+     * </pre>
+     *
      * <code>string message = 1;</code>
      * @param value The bytes for message to set.
      * @return This builder for chaining.

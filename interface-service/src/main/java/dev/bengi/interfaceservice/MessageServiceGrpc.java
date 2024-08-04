@@ -1,10 +1,11 @@
 package dev.bengi.interfaceservice;
 
-import io.grpc.stub.StreamObserver;
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Define a service for handling messages
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.51.0)",
@@ -93,10 +94,16 @@ public final class MessageServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Define a service for handling messages
+   * </pre>
    */
   public static abstract class MessageServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * RPC method to get a message
+     * </pre>
      */
     public void getMessage(dev.bengi.interfaceservice.MessageRequest request,
         io.grpc.stub.StreamObserver<dev.bengi.interfaceservice.MessageResponse> responseObserver) {
@@ -114,11 +121,12 @@ public final class MessageServiceGrpc {
                   this, METHODID_GET_MESSAGE)))
           .build();
     }
-
-    public abstract void message(MessageRequest request, StreamObserver<MessageResponse> responseObserver);
   }
 
   /**
+   * <pre>
+   * Define a service for handling messages
+   * </pre>
    */
   public static final class MessageServiceStub extends io.grpc.stub.AbstractAsyncStub<MessageServiceStub> {
     private MessageServiceStub(
@@ -133,6 +141,9 @@ public final class MessageServiceGrpc {
     }
 
     /**
+     * <pre>
+     * RPC method to get a message
+     * </pre>
      */
     public void getMessage(dev.bengi.interfaceservice.MessageRequest request,
         io.grpc.stub.StreamObserver<dev.bengi.interfaceservice.MessageResponse> responseObserver) {
@@ -142,6 +153,9 @@ public final class MessageServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Define a service for handling messages
+   * </pre>
    */
   public static final class MessageServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<MessageServiceBlockingStub> {
     private MessageServiceBlockingStub(
@@ -156,6 +170,9 @@ public final class MessageServiceGrpc {
     }
 
     /**
+     * <pre>
+     * RPC method to get a message
+     * </pre>
      */
     public dev.bengi.interfaceservice.MessageResponse getMessage(dev.bengi.interfaceservice.MessageRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -164,6 +181,9 @@ public final class MessageServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Define a service for handling messages
+   * </pre>
    */
   public static final class MessageServiceFutureStub extends io.grpc.stub.AbstractFutureStub<MessageServiceFutureStub> {
     private MessageServiceFutureStub(
@@ -178,6 +198,9 @@ public final class MessageServiceGrpc {
     }
 
     /**
+     * <pre>
+     * RPC method to get a message
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<dev.bengi.interfaceservice.MessageResponse> getMessage(
         dev.bengi.interfaceservice.MessageRequest request) {
