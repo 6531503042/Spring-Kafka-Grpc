@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -17,10 +19,11 @@
 
 	<properties>
 		<java.version>21</java.version>
-		<protobuf.version>3.15.7</protobuf.version>
-		<grpc.version>1.62.2</grpc.version>
+		<protobuf.version>3.17.0</protobuf.version>
+		<grpc.version>1.38.0</grpc.version>
 		<os.detected.classifier>linux-x86_64</os.detected.classifier>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>net.devh</groupId>
@@ -60,38 +63,25 @@
 	</dependencies>
 
 	<build>
-		<!--os maven plugin for protoc-->
-		<extensions>
-			<extension>
-				<groupId>kr.motd.maven</groupId>
-				<artifactId>os-maven-plugin</artifactId>
-				<version>1.6.2</version>
-			</extension>
-		</extensions>
-
 		<plugins>
 			<plugin>
 				<groupId>org.xolstice.maven.plugins</groupId>
 				<artifactId>protobuf-maven-plugin</artifactId>
 				<version>0.6.1</version>
-
 				<configuration>
 					<protocArtifact>
-						com.google.protobuf:protoc:3.17.0:exe:${os.detected.classifier}</protocArtifact>
+						com.google.protobuf:protoc:3.17.0:exe:${os.detected.classifier}
+					</protocArtifact>
 					<pluginId>grpc-java</pluginId>
 					<pluginArtifact>
-						io.grpc:protoc-gen-grpc-java:1.38.0:exe:${os.detected.classifier}</pluginArtifact>
-					<outputDirectory>
-						src/main/java</outputDirectory>
+						io.grpc:protoc-gen-grpc-java:1.38.0:exe:${os.detected.classifier}
+					</pluginArtifact>
+					<outputDirectory>src/main/java</outputDirectory>
 					<clearOutputDirectory>false</clearOutputDirectory>
-
-					<!--Fixed proto-buffer path-->
-<!--					<includeDirectories>-->
-<!--						<include>src/main/proto</include>-->
-<!--					</includeDirectories>-->
-
+					<includes>
+						<include>**/*.proto</include>
+					</includes>
 				</configuration>
-
 				<executions>
 					<execution>
 						<goals>
@@ -100,9 +90,7 @@
 						</goals>
 					</execution>
 				</executions>
-
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

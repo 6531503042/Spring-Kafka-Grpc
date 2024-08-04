@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package dev.bengi;
+
+option java_package = "dev.bengi.dev.bengi.interface-service";
+option java_outer_classname = "MessageProto";
+option java_multiple_files = true;
+
+/**
+ * @author Bengi
+ */
+message MessageRequest {
+  string message = 1;
+}
+
+message MessageResponse {
+  string message = 1;
+}
+
+service MessageService {
+  rpc getMessage(MessageRequest) returns (MessageResponse);
+}
