@@ -9,6 +9,7 @@
         <module name="interface-service" />
         <module name="registry-service" />
         <module name="Spring-Grpc" />
+        <module name="message-services" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring-GRPC" options="" />
       <module name="interface-service" options="-parameters" />
+      <module name="message-services" options="-parameters" />
       <module name="registry-service" options="-parameters" />
     </option>
   </component>

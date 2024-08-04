@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -19,46 +18,48 @@
 
 	<properties>
 		<java.version>21</java.version>
-		<protobuf.version>3.17.0</protobuf.version>
-		<grpc.version>1.38.0</grpc.version>
-		<os.detected.classifier>linux-x86_64</os.detected.classifier>
+		<protobuf.version>3.21.12</protobuf.version>
+		<grpc.version>1.51.0</grpc.version> <!-- Updated version -->
+		<os.detected.classifier>osx-x86_64</os.detected.classifier> <!-- Update classifier for macOS -->
 	</properties>
 
 	<dependencies>
+		<!-- Protobuf Java Dependency -->
 		<dependency>
-			<groupId>net.devh</groupId>
-			<artifactId>grpc-server-spring-boot-starter</artifactId>
-			<version>3.0.0.RELEASE</version>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>${protobuf.version}</version>
+		</dependency>
+
+		<!-- gRPC Dependency -->
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-stub</artifactId>
+			<version>${grpc.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-netty-shaded</artifactId>
-			<version>1.38.0</version>
+			<version>${grpc.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-protobuf</artifactId>
-			<version>1.38.0</version>
+			<version>${grpc.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.grpc</groupId>
-			<artifactId>grpc-stub</artifactId>
-			<version>1.38.0</version>
+			<artifactId>grpc-core</artifactId>
+			<version>${grpc.version}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.google.protobuf</groupId>
-			<artifactId>protobuf-java</artifactId>
-			<version>3.17.0</version>
-		</dependency>
-
 		<dependency>
 			<groupId>javax.annotation</groupId>
 			<artifactId>javax.annotation-api</artifactId>
 			<version>1.3.2</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
@@ -67,14 +68,14 @@
 			<plugin>
 				<groupId>org.xolstice.maven.plugins</groupId>
 				<artifactId>protobuf-maven-plugin</artifactId>
-				<version>0.6.1</version>
+				<version>0.6.1</version> <!-- Consider updating to the latest version if available -->
 				<configuration>
 					<protocArtifact>
-						com.google.protobuf:protoc:3.17.0:exe:${os.detected.classifier}
+						com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
 					</protocArtifact>
 					<pluginId>grpc-java</pluginId>
 					<pluginArtifact>
-						io.grpc:protoc-gen-grpc-java:1.38.0:exe:${os.detected.classifier}
+						io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}
 					</pluginArtifact>
 					<outputDirectory>src/main/java</outputDirectory>
 					<clearOutputDirectory>false</clearOutputDirectory>

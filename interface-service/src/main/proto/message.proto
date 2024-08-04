@@ -2,21 +2,26 @@ syntax = "proto3";
 
 package dev.bengi;
 
-option java_package = "dev.bengi.dev.bengi.interface-service";
+option java_package = "dev.bengi.interfaceservice";
 option java_outer_classname = "MessageProto";
 option java_multiple_files = true;
 
 /**
- * @author Bengi
+ * This is a message service.
+ * @author bengi
  */
+
+// Define a message for the request
 message MessageRequest {
-  string message = 1;
+  string message = 1; // The message field of type string
 }
 
+// Define a message for the response
 message MessageResponse {
-  string message = 1;
+  string message = 1; // The message field of type string
 }
 
+// Define a service for handling messages
 service MessageService {
-  rpc getMessage(MessageRequest) returns (MessageResponse);
+  rpc getMessage(MessageRequest) returns (MessageResponse); // RPC method to get a message
 }
