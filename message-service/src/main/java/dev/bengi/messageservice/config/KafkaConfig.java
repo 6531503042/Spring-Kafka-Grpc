@@ -1,8 +1,11 @@
 package dev.bengi.messageservice.config;
 
 import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
@@ -26,10 +29,10 @@ public class KafkaConfig {
     @Bean
     public ProducerFactory<String, String> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
-        configProps.put("spring.kafka.producer.bootstrap-servers", "localhost:9092");
-        configProps.put("spring.kafka.producer.key-serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        configProps.put("spring.kafka.producer.value-serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        return new org.springframework.kafka.core.DefaultKafkaProducerFactory<>(configProps);
+        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        return new DefaultKafkaProducerFactory<>(configProps);
     }
 
     /**
